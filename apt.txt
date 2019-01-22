@@ -2,5 +2,18 @@ apt-utils
 wget 
 git
 gcc
+gfortran
+libc6
+libc-bin
+libc-dev-bin
+make
+libblas-dev
+liblapack-dev
+libatlas-base-dev
+curl
+zlib1g
+zlib1g-dev
+libbz2-1.0
+libbz2-dev
 moreutils
 
