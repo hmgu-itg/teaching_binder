@@ -1,0 +1,56 @@
+ #!/bin/bash
+ 
+ cd
+ 
+git clone https://github.com/chrchang/plink-ng.git
+cd plink-ng/1.9
+./plink_first_compile
+cp plink /usr/bin
+cd
+rm -r /plink-ng
+git clone git://github.com/samtools/htslib.git
+git clone git://github.com/samtools/bcftools.git
+git clone https://github.com/samtools/samtools.git
+cd bcftools
+make
+cd
+cd htslib
+make tabix
+cd
+cd samtools
+make samtools
+cd
+cp samtools/samtools htslib/tabix bcftools/bcftools /usr/bin
+rm -r /bcftools /htslib /samtools
+cd
+wget http://www.well.ox.ac.uk/~gav/resources/snptest_v2.5.1_linux_x86_64_dynamic.tgz
+tar -xvzf snptest_v2.5.1_linux_x86_64_dynamic.tgz
+cp snptest_v2.5.1_linux_x86_64_dynamic/snptest_v2.5.1 /usr/bin
+rm -r /snptest_v2.5.1_linux_x86_64_dynamic /snptest_v2.5.1_linux_x86_64_dynamic.tgz
+git clone https://github.com/xianyi/OpenBLAS.git
+cd OpenBLAS
+echo "/opt/OpenBLAS/lib" > /etc/ld.so.conf.d/openblas.conf
+make DYNAMIC_ARCH=1 NO_AFFINITY=1 NUM_THREADS=32
+make install
+ldconfig
+cd
+git clone https://github.com/genetics-statistics/GEMMA.git
+cd GEMMA
+ln -s /opt/OpenBLAS/lib/libopenblas.so /usr/lib/libopenblas.so
+sed -i 's/\/usr\/local\/opt\/openblas\/include/\/opt\/OpenBLAS\/include/' Makefile
+make
+cp bin/gemma /usr/bin
+cd
+wget http://csg.sph.umich.edu/abecasis/metal/download/generic-metal-2011-03-25.tar.gz
+tar -xvzf generic-metal-2011-03-25.tar.gz
+cd generic-metal
+make all
+make install
+cd
+wget https://data.broadinstitute.org/alkesgroup/BOLT-LMM/downloads/BOLT-LMM_v2.3.2.tar.gz
+tar -xvzf BOLT-LMM_v2.3.2.tar.gz
+cp BOLT-LMM_v2.3.2/* /usr/bin
+rm -r BOLT-LMM_v2.3.2.tar.gz generic-metal-2011-03-25.tar.gz /generic-metal
+cd
+Rscript -e "install.packages(c('Cairo', 'plotrix', 'data.table'))"
+Rscript -e "install.packages('EasyQC_9.2.tar.gz')"
