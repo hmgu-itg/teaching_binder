@@ -1,8 +1,6 @@
 apt-utils 
-nano 
 wget 
-iputils-ping 
-git 
-yum 
-gcc 
+git
+gcc
+sponge
 
