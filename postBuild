@@ -52,5 +52,5 @@ cd plink-ng/1.9
 #cp BOLT-LMM_v2.3.2/* /usr/bin
 #rm -r BOLT-LMM_v2.3.2.tar.gz generic-metal-2011-03-25.tar.gz /generic-metal
 #cd
-Rscript -e "install.packages(c('data.table', 'qqman', 'gap'))"
+#Rscript -e "install.packages(c('data.table', 'qqman', 'gap'))"
 #Rscript -e "install.packages('EasyQC_9.2.tar.gz')"
