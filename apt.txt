@@ -1,7 +1,4 @@
 apt-utils 
-python 
-python-pip 
-python3 
 nano 
 wget 
 iputils-ping 
