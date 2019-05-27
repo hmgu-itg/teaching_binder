@@ -22,8 +22,8 @@ cd
 cd samtools
 make samtools
 cd
-cp samtools/samtools htslib/tabix bcftools/bcftools /usr/bin
-rm -r /bcftools /htslib /samtools
+#cp samtools/samtools htslib/tabix bcftools/bcftools /usr/bin
+#rm -r bcftools htslib samtools
 #cd
 #wget http://www.well.ox.ac.uk/~gav/resources/snptest_v2.5.1_linux_x86_64_dynamic.tgz
 #tar -xvzf snptest_v2.5.1_linux_x86_64_dynamic.tgz
