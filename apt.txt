@@ -16,4 +16,3 @@ zlib1g-dev
 libbz2-1.0
 libbz2-dev
 moreutils
-r-base
