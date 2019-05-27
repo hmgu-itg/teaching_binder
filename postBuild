@@ -2,26 +2,28 @@
  
  cd
  
-git clone https://github.com/chrchang/plink-ng.git
-cd plink-ng/1.9
-./plink_first_compile
+#git clone https://github.com/chrchang/plink-ng.git
+#cd plink-ng/1.9
+#./plink_first_compile
+wget http://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20190304.zip
+unzip plink_linux_x86_64_20190304.zip
 #cp plink /usr/bin
 #cd
 #rm -r /plink-ng
-#git clone git://github.com/samtools/htslib.git
-#git clone git://github.com/samtools/bcftools.git
-#git clone https://github.com/samtools/samtools.git
-#cd bcftools
-#make
-#cd
-#cd htslib
-#make tabix
-#cd
-#cd samtools
-#make samtools
-#cd
-#cp samtools/samtools htslib/tabix bcftools/bcftools /usr/bin
-#rm -r /bcftools /htslib /samtools
+git clone git://github.com/samtools/htslib.git
+git clone git://github.com/samtools/bcftools.git
+git clone https://github.com/samtools/samtools.git
+cd bcftools
+make
+cd
+cd htslib
+make tabix
+cd
+cd samtools
+make samtools
+cd
+cp samtools/samtools htslib/tabix bcftools/bcftools /usr/bin
+rm -r /bcftools /htslib /samtools
 #cd
 #wget http://www.well.ox.ac.uk/~gav/resources/snptest_v2.5.1_linux_x86_64_dynamic.tgz
 #tar -xvzf snptest_v2.5.1_linux_x86_64_dynamic.tgz
