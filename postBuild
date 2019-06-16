@@ -13,25 +13,30 @@ rm *.zip
 #cp plink /usr/bin
 #cd
 #rm -r /plink-ng
-git clone git://github.com/samtools/htslib.git
-git clone git://github.com/samtools/bcftools.git
-git clone https://github.com/samtools/samtools.git
-cd bcftools
-make
-cd
-cd htslib
-make tabix
-cd
-cd samtools
-make samtools
-cd
-mv samtools/samtools htslib/tabix bcftools/bcftools software
-rm -r bcftools samtools htslib
+#git clone git://github.com/samtools/htslib.git
+#git clone git://github.com/samtools/bcftools.git
+#git clone https://github.com/samtools/samtools.git
+#cd bcftools
+#make
+#cd
+#cd htslib
+#make tabix
+#cd
+#cd samtools
+#make samtools
+#cd
+#mv samtools/samtools htslib/tabix bcftools/bcftools software
+#rm -r bcftools samtools htslib
 rm LICENSE postBuild prettify
 echo "export PATH=$(pwd)/software" >> .bashrc
 rm toy.*
 mkdir -p $(pwd)/R/packages
 chmod +x ./install.R && ./install.R
+mkdir data
+mv *.gz data/
+cd data
+tar -xvzf *.gz
+rm *.gz
 #cp samtools/samtools htslib/tabix bcftools/bcftools /usr/bin
 #rm -r bcftools htslib samtools
 #cd
