@@ -17,3 +17,8 @@ libbz2-1.0
 libbz2-dev
 moreutils
 jq
+r-base-core
+r-base-recommended
+r-base html
+r-doc-html
+
