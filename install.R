@@ -4,4 +4,5 @@
 #IRkernel::installspec()
 install.packages("qqman")
 install.packages("gap")
+install.packages("data.table")
 

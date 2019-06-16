@@ -38,6 +38,9 @@ mv *.gz data/
 cd data
 tar -xvzf *.gz
 rm *.gz
+pip install bash_kernel
+python -m bash_kernel.install
+
 #cp samtools/samtools htslib/tabix bcftools/bcftools /usr/bin
 #rm -r bcftools htslib samtools
 #cd
