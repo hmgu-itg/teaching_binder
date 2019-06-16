@@ -30,7 +30,7 @@ rm -r bcftools samtools htslib
 rm LICENSE postBuild prettify
 echo "export PATH=$(pwd)/software" >> .bashrc
 rm toy.*
-mkdir $(pwd)/R/packages
+mkdir -p $(pwd)/R/packages
 #cp samtools/samtools htslib/tabix bcftools/bcftools /usr/bin
 #rm -r bcftools htslib samtools
 #cd
