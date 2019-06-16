@@ -7,6 +7,9 @@
 #./plink_first_compile
 wget http://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20190304.zip
 unzip plink_linux_x86_64_20190304.zip
+mkdir software
+mv plink software
+rm *.zip
 #cp plink /usr/bin
 #cd
 #rm -r /plink-ng
@@ -22,6 +25,11 @@ cd
 cd samtools
 make samtools
 cd
+mv samtools/samtools htslib/tabix bcftools/bcftools software
+rm -r bcftools samtools htslib
+rm LICENSE postBuild prettify
+echo "export PATH=$(pwd)/software" >> .bashrc
+
 #cp samtools/samtools htslib/tabix bcftools/bcftools /usr/bin
 #rm -r bcftools htslib samtools
 #cd
